@@ -20,7 +20,6 @@ const login = (state = [], action) => {
 
         case 'REGISTER_FAILURE':
             return {
-                ...state,
                 messageReg: action.message,
                 isLoading: false,
             }
@@ -38,11 +37,9 @@ const login = (state = [], action) => {
             }
 
         case 'LOGIN_FAILURE':
-            console.log('ACtion', action.message)
             return {
                 isLoading: false,
-                messageLog: action.message,
-                ...state,
+                messageLog: action.message
             }
         default:
             return state

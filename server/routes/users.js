@@ -15,9 +15,9 @@ router.post('/register', async function (req, res, next) {
 
     const data = await Users.findOne({ email })
     const hash = await bcrypt.hash(password, saltRounds)
-    await Users.create({ id, email, password: hash, token })
 
     if (data) return res.status(200).json({ data: false, message: 'Email Already Exists' })
+    await Users.create({ id, email, password: hash, token })
     return res.status(201).json({
       data: {
         email
@@ -36,8 +36,10 @@ router.post('/login', async function (req, res, next) {
     const { email, password } = req.body;
     const data = await Users.findOne({ email })
     if (!data) return res.status(200).json({ data: false, message: "User Not Found" })
+    console.log(data)
     const result = await bcrypt.compare(password, data.password)
-    if (!result) return res.status(200).json({ data: false, message: 'Email Or Username is wrong' })
+    if (!result) return res.status(200).json({ data: false, message: 'Email Or Password is wrong' })
+    console.log('DISINI')
     const token = jwt.sign({ email }, 'my_secret_key');
     await Users.updateMany({ email }, { $set: { token } })
     res.status(201).json({

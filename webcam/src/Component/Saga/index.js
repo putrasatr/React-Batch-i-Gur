@@ -17,12 +17,10 @@ function* loginUser(payload) {
     const { email, password } = payload
     try {
         const { data, message, token } = yield call(login, `${PATH_USERS}/login`, { email, password })
-        console.log('token', token, data)
         if (data || token) return yield put(actions.loginSuccess(data, token, message))
-
         yield put(actions.loginFailure(message))
     } catch (error) {
-        const errMessage = "Kesalahan Jaringan"
+        const errMessage = "There is Something Wrong"
         console.log(error);
         yield put(actions.loginFailure(errMessage));
     }
@@ -35,7 +33,7 @@ function* registerUser(payload) {
         if (data || token) return yield put(actions.registerSuccess(data, token, message))
         yield put(actions.registerFailure(message))
     } catch (error) {
-        const errMessage = "Kesalahan Jaringan"
+        const errMessage = "There Is Something Wrong"
         console.log(error);
         yield put(actions.registerFailure(errMessage));
     }

@@ -1,4 +1,5 @@
 import '../../Assets/Css/login.css'
+import '../../Assets/Css/animated.css'
 import EyeSlash from '../../Assets/Icons/eyeslash.png'
 import Eye from '../../Assets/Icons/eye.png'
 import Limg from '../../Assets/Icons/loadingnu.png'
@@ -8,7 +9,7 @@ import { registerUser } from '../../Component/Actions'
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-function SignUp() {
+function SignUp(props) {
     const dispatch = useDispatch()
 
     const [isEye, setEye] = useState({ p: false, r: false })
@@ -21,11 +22,16 @@ function SignUp() {
     const [message, setMessage] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
 
+    const { status } = props
+
     const state = useSelector((state) => state.login)
     useEffect(() => {
         setIsLoading(state.isLoading)
+        setMessage(state.messageReg);
     }, [state])
-
+    useEffect(() => {
+        setMessage('empty')
+    }, [status])
     const handleEye = () => {
         setEye({ p: !isEye.p, r: isEye.r })
     }
@@ -72,10 +78,10 @@ function SignUp() {
     }
     const submit = (isPas === null ? true : false) && isEmail && isRePas
     return (
-        <div className="form">
+        <div className="form animated fadeInDown">
             <div className="form-col">
-                <div className={state.messageReg || message ? "" : "d-none"}>
-                    <cite><small className="text-red">{state.messageReg || message}</small></cite>
+                <div className={message ? "" : "d-none"}>
+                    <cite className={message === 'empty' ? 'd-none' : ''}><small className="text-red">{message}</small></cite>
                 </div>
                 <div className="form-email">
                     <input className={isEmail ? "form-control" : isEmail === null ? "form-control" : "form-control bbt-red"} value={EmailValue} onChange={(text) => handleChangeEmail(text)} placeholder="Email" type="email" />

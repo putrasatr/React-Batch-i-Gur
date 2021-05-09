@@ -22,7 +22,7 @@ function Login() {
     <main className="d-flex align-items-center min-vh-100 py-3 py-md-0">
       <div id="bx-login">
         <BgLogin />
-        {signin ? <SignIn /> : signin == null ? " " : <SignUp />}
+        {signin ? <SignIn status={signup}/> : signin == null ? " " : <SignUp status={signin}/>}
         <div>
           <div id="box-button">
             <div className={signup ? "d-none" : "box-sign-up"} onClick={handleSignup}>

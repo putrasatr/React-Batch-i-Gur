@@ -12,27 +12,27 @@ export default function NavBar() {
     const email  = secureLocalStorage.getItem('email')
     return (
         <>
-            <nav class="navbar">
-                <div class="navbar__container">
+            <nav className="navbar">
+                <div className="navbar__container">
                     <a href="#home" id="navbar__logo">{email}</a>
-                    <div class="navbar__toggle" id="mobile-menu">
-                        <span class="bar"></span> <span class="bar"></span>
-                        <span class="bar"></span>
+                    <div className="navbar__toggle" id="mobile-menu">
+                        <span className="bar"></span> <span className="bar"></span>
+                        <span className="bar"></span>
                     </div>
-                    <ul class="navbar__menu">
-                        <li class="navbar__item">
-                            <a href="#home" class="navbar__links" id="home-page">Home</a>
+                    <ul className="navbar__menu">
+                        <li className="navbar__item">
+                            <a href="#home" className="navbar__links" id="home-page">Home</a>
                         </li>
-                        <li class="navbar__item">
-                            <a href="#about" class="navbar__links" id="about-page">About</a>
+                        <li className="navbar__item">
+                            <a href="#about" className="navbar__links" id="about-page">About</a>
                         </li>
-                        <li class="navbar__item">
-                            <a href="#services" class="navbar__links" id="services-page"
+                        <li className="navbar__item">
+                            <a href="#services" className="navbar__links" id="services-page"
                             >Services</a
                             >
                         </li>
-                        <li class="navbar__btn">
-                            <a href="/" class="button" id="signup" onClick={logout}>Sign Up</a>
+                        <li className="navbar__btn">
+                            <a href="/" className="button" id="signup" onClick={logout}>Log Out</a>
                         </li>
                     </ul>
                 </div>
