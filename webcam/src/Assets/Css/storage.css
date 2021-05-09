@@ -1,0 +1,63 @@
+
+ .form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #182867;
+    padding: 0 0 0 32px;
+    color: #2a2a2a;
+    /* height: 45px; */
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    font-family: "Nunito", sans-serif;
+    /* display: block; */
+    /* width: 100%; */
+    /* height: calc(1.5em + .75rem + 2px); */
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: .25rem .25rem 0 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+} 
+button, input {
+    outline: 0 !important;
+    overflow: visible;
+    margin: 10px 0;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+input[type="text" i] {
+    padding: 1px 2px;
+}
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}

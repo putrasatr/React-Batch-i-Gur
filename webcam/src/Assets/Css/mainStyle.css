@@ -1,0 +1,7 @@
+.Body{
+    display: flex;
+    color: rgb(39, 39, 38);
+    margin: 0;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+}
