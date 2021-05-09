@@ -8,7 +8,7 @@ const mobileMenu = () => {
   menuLinks.classList.toggle('active');
 };
 
-menu.addEventListener('click', mobileMenu);
+menu ? menu.addEventListener('click', mobileMenu) : '';
 
 // Show active menu when scrolling
 const highlightMenu = () => {
@@ -40,8 +40,8 @@ const highlightMenu = () => {
   }
 };
 
-window.addEventListener('scroll', highlightMenu);
-window.addEventListener('click', highlightMenu);
+// window.addEventListener('scroll', highlightMenu);
+// window.addEventListener('click', highlightMenu);
 
 //  Close mobile Menu when clicking on a menu item
 const hideMobileMenu = () => {
@@ -52,5 +52,5 @@ const hideMobileMenu = () => {
   }
 };
 
-menuLinks.addEventListener('click', hideMobileMenu);
-navLogo.addEventListener('click', hideMobileMenu);
+menuLinks ? menuLinks.addEventListener('click', hideMobileMenu) : '';
+navLogo ? navLogo.addEventListener('click', hideMobileMenu) : '';

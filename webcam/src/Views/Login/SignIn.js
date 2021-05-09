@@ -22,7 +22,7 @@ function SignIn() {
     const state = useSelector((state) => state.login)
     useEffect(() => {
         setIsLoading(state.isLoading)
-    }, [state.isLoading])
+    }, [state])
 
     const handleEye = () => {
         setEye({ p: !isEye.p, r: isEye.r })
@@ -34,7 +34,6 @@ function SignIn() {
         setEmail(result)
         setEmailValue(value)
         setIsLoading(false)
-        state.messageLog = ''
         if (!value.length) setEmail(null)
     }
     const handlePasText = (v) => {
@@ -44,7 +43,6 @@ function SignIn() {
         setPas(result)
         setPasValue(value)
         setIsLoading(false)
-        state.messageLog = ''
         if (!result) setMessage('Password must contain at least one number & has 8 character')
         if (!(/^(?=.*[A-Z])/.test(value[0]))) setMessage("Password's first character must be a capital")
         if (!value.length || result) {
@@ -75,7 +73,7 @@ function SignIn() {
                     </div>
                 </div>
             </div>
-            <button type="submit" className={submit ? "btn-submit" : "btn-submit bg-grey"} id="" onClick={handleSubmit} onAbort={isLoading}>
+            <button type="submit" className={submit ? "btn-submit" : "btn-submit bg-grey"} id="" onClick={handleSubmit}>
                 <div id="btn-sign-in">
                     {isLoading ? <img className="spin" src={Limg} alt="" /> : <span>Sign In</span>}
                 </div>

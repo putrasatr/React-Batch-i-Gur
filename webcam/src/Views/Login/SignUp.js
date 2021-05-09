@@ -5,7 +5,7 @@ import Limg from '../../Assets/Icons/loadingnu.png'
 import { passValidate, ValidateEmail } from '../../Assets/Javascript/EmailValidator'
 import { registerUser } from '../../Component/Actions'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 function SignUp() {
@@ -22,6 +22,10 @@ function SignUp() {
     const [isLoading, setIsLoading] = useState(false)
 
     const state = useSelector((state) => state.login)
+    useEffect(() => {
+        setIsLoading(state.isLoading)
+    }, [state])
+
     const handleEye = () => {
         setEye({ p: !isEye.p, r: isEye.r })
     }
@@ -90,9 +94,9 @@ function SignUp() {
                 </div>
             </div>
 
-            <div className={submit ? "btn-submit" : "btn-submit bg-grey"} id="" onClick={handleSubmit} onAbort={isLoading}>
+            <div className={submit ? "btn-submit" : "btn-submit bg-grey"} id="" onClick={handleSubmit}>
                 <div id="btn-sign-in">
-                    {state.isLoading ? <img className="spin" src={Limg} alt="" /> : <span>Sign Up</span>}
+                    {isLoading ? <img className="spin" src={Limg} alt="" /> : <span>Sign Up</span>}
                 </div>
             </div>
         </div>
