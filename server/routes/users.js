@@ -37,18 +37,16 @@ router.post('/login', async function (req, res, next) {
     const data = await Users.findOne({ email })
     if (!data) return res.status(200).json({ data: false, message: "User Not Found" })
     const result = await bcrypt.compare(password, data.password)
-    if (result) {
-      const token = jwt.sign({ email }, 'my_secret_key');
-      await Users.updateMany({ email }, { $set: { token } })
-      res.status(201).json({
-        data: {
-          email
-        },
-        token,
-        message: "Success Logging In"
-      })
-      return
-    }
+    if (!result) return res.status(200).json({ data: false, message: 'Email Or Username is wrong' })
+    const token = jwt.sign({ email }, 'my_secret_key');
+    await Users.updateMany({ email }, { $set: { token } })
+    res.status(201).json({
+      data: {
+        email
+      },
+      token,
+      message: "Success Logging In"
+    })
   } catch (error) {
     console.log(error)
     return res.status(200).json({ data: false, message: 'There is Something Wrong' })
