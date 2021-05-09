@@ -7,8 +7,6 @@ import { loginUser } from '../../Component/Actions'
 
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
-
 
 function SignIn() {
     const dispatch = useDispatch()
@@ -69,7 +67,7 @@ function SignIn() {
                         </div>
                     </div>
                 </div>
-                <button type="submit" className={submit ? "btn-submit" : "btn-submit bg-grey"} id="" onClick={handleSubmit}>
+                <button type="submit" className={submit ? "btn-submit" : "btn-submit bg-grey"} id="" onClick={handleSubmit} onAbort={isLoading}>
                     <div id="btn-sign-in">
                         {state.isLoading ? <img className="spin" src={Limg} alt="" /> : <span>Sign In</span>}
                     </div>
