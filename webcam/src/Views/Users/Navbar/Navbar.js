@@ -1,17 +1,25 @@
-import "../../Assets/Css/navbar.css"
-import { secureLocalStorage } from "../../helpers"
-import history from "../../history"
+import "../../../Assets/Css/navbar.css"
+import { secureLocalStorage } from "../../../helpers"
+import history from "../../../history"
+import Loading from "../../../Assets/Background/Loadnig"
+import chill from "../../../Assets/Image/gnu.png"
 
-import React from 'react'
+import React, { useState } from 'react'
+
 function logout() {
     secureLocalStorage.clear()
     history.push('/')
 }
 
 export default function NavBar() {
-    const email  = secureLocalStorage.getItem('email')
+    const email = secureLocalStorage.getItem('email')
+
+    const [isLoading, setisLoading] = useState(true)
+
+    setTimeout(()=>setisLoading(false),2000)
     return (
-        <>
+        <div>
+            {isLoading && <Loading />}
             <nav className="navbar">
                 <div className="navbar__container">
                     <a href="#home" id="navbar__logo">{email}</a>
@@ -37,6 +45,9 @@ export default function NavBar() {
                     </ul>
                 </div>
             </nav>
-        </>
+            <div>
+                <img alt="" src={chill} />
+            </div>
+        </div>
     )
 }

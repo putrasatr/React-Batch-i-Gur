@@ -25,14 +25,25 @@ const login = (state = [], action) => {
             }
         case 'LOGIN_SUCCESS':
             const data = action.data
+            console.log('DATAA', data)
+            console.log('actionnn', action)
             secureLocalStorage.setItem('token', data.token)
             secureLocalStorage.setItem('email', data.email)
+            if (data.email === 'mir@gmail.com') {
+                window.location.href = '/admin/dashboard'
+                return {
+                    email: data.email,
+                    messageReg: message,
+                    token: data.token,
+                    ...state
+                }
+            }
             window.location.href = '/home'
             history.push('/home')
             return {
-                email: action.email,
-                messageReg: action.message,
-                token: action.token,
+                email: data.email,
+                messageReg: data.message,
+                token: data.token,
                 ...state
             }
 

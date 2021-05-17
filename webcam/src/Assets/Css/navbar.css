@@ -79,10 +79,10 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    background: #ffffff;
+    background: #fff;
     /* background: -webkit-linear-gradient(to right, #6b9dd0,#fad0ce,#ffe8e6);
     background: linear-gradient(to right, #6b9dd0,#fad0ce,#ffe8e6); */
-    color: #2c4866;
+    color: #6b9dd0;;
     transition: all 0.3s ease;
   }
   

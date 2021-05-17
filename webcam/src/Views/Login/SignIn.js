@@ -51,8 +51,6 @@ function SignIn(props) {
         setPas(result)
         setPasValue(value)
         setIsLoading(false)
-        if (!result) setMessage('Password must contain at least one number & has 8 character')
-        if (!(/^(?=.*[A-Z])/.test(value[0]))) setMessage("Password's first character must be a capital")
         if (!value.length || result) {
             setPas(null);
             setMessage(null);
@@ -68,7 +66,7 @@ function SignIn(props) {
     return (
         <div className="form animated fadeInDown">
             <div className="form-col">
-                <div className={message ? "" : "d-none"}>
+                <div className={message ? "bx-msg" : "d-none"}>
                     <cite className={message === 'empty' ? 'd-none' : ''}><small className="text-red">{message}</small></cite>
                 </div>
                 <div className="form-email">

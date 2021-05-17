@@ -20,14 +20,14 @@ function Login() {
   }
   return (
     <main className="d-flex align-items-center min-vh-100 py-3 py-md-0">
-      <div id="bx-login">
+      <div id="bx-login" className="animatedLong fadeInDownLong">
         <BgLogin />
         {signin ? <SignIn status={signup}/> : signin == null ? " " : <SignUp status={signin}/>}
         <div>
           <div id="box-button">
             <div className={signup ? "d-none" : "box-sign-up"} onClick={handleSignup}>
               <div id="btn-sign-up" >
-                <small>Don't Have Account ?</small>
+                <small>Don't Have an Account ? </small>
                 <span>Sign Up</span>
               </div>
             </div>

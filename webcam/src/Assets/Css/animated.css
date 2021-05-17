@@ -1,34 +1,83 @@
 .animated {
-    -webkit-animation-duration: 0.9s;
-    animation-duration: 0.9s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+   -webkit-animation-duration: 0.9s;
+   animation-duration: 0.9s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
 
- }
- 
- @-webkit-keyframes fadeInDown {
-    0% {
-       opacity: 0;
-       -webkit-transform: translateY(-20px);
-    }
-    100% {
-       opacity: 1;
-       -webkit-transform: translateY(0);
-    }
- }
- 
- @keyframes fadeInDown {
-    0% {
-       opacity: 0;
-       transform: translateY(-20px);
-    }
-    100% {
-       opacity: 1;
-       transform: translateY(0);
-    }
- }
- 
- .fadeInDown {
-    -webkit-animation-name: fadeInDown;
-    animation-name: fadeInDown;
- }
+}
+
+@-webkit-keyframes fadeInDown {
+   0% {
+      opacity: 0;
+      -webkit-transform: translateY(-20px);
+   }
+   100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+   }
+}
+
+@keyframes fadeInDown {
+   0% {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.fadeInDown {
+   -webkit-animation-name: fadeInDown;
+   animation-name: fadeInDown;
+}
+.animatedLong {
+   -webkit-animation-duration: 3s;
+   animation-duration: 3s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+
+}
+
+@-webkit-keyframes fadeInDownLong{
+   0% {
+      opacity: 0;
+      -webkit-transform: translateY(-20px);
+   }
+   100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+   }
+}
+
+@keyframes fadeInDownLong {
+   0% {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.fadeInDownLong {
+   -webkit-animation-name: fadeInDown;
+   animation-name: fadeInDown;
+}
+
+.popout {
+   animation: popout 1s ease;
+   -webkit-animation: popout 1s ease;
+}
+@keyframes popout {
+   from{transform:scale(0)}
+   80%{transform:scale(1.2)}
+   to{transform:scale(1)}
+}
+@-webkit-keyframes popout {
+   from{-webkit-transform:scale(0)}
+   80%{-webkit-transform:scale(1.2)}
+   to{-webkit-transform:scale(1)}
+}

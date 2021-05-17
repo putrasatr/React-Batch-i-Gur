@@ -80,7 +80,7 @@ function SignUp(props) {
     return (
         <div className="form animated fadeInDown">
             <div className="form-col">
-                <div className={message ? "" : "d-none"}>
+                <div className={message ? "bx-msg" : "d-none"}>
                     <cite className={message === 'empty' ? 'd-none' : ''}><small className="text-red">{message}</small></cite>
                 </div>
                 <div className="form-email">
