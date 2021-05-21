@@ -13,11 +13,11 @@ export const ProtectedRoute = ({
                 if (auth.isAuthenticated()) {
                     return <Component {...props} />;
                 } else {
-                    window.location.href = '/'
+                    // window.location.href = '/welcome'
                     return (
                         <Redirect
                             to={{
-                                pathname: "/",
+                                pathname: "/welcome",
                                 state: {
                                     from: props.location
                                 }

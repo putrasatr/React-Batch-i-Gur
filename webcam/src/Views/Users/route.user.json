@@ -1,0 +1,18 @@
+[
+    {
+        "path": "/philosophy",
+        "component": "Phylosophy"
+    },
+    {
+        "path": "/news",
+        "component": "News"
+    },
+    {
+        "path": "/market-place",
+        "component": "Market Place"
+    },
+    {
+        "path": "/",
+        "component": "Home"
+    }
+]

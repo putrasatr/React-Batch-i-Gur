@@ -8,8 +8,8 @@ import loading from '../Icons/load-blue-round.png'
 function Loading() {
 
     return (
-        <div id="load-page">
-            <img src={loading} alt="" id="img-load"></img>
+        <div className="load-page">
+            <img src={loading} alt="" className="img-load"></img>
         </div>
     );
 }

@@ -257,8 +257,8 @@ main{
 
 /* -----Image Chill----- */
 #chill{
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
+    width: calc(80% - 10px);
+    height: calc(80% - 10px);
     margin: auto;
 }
 .spin{

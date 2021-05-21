@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label htmlFor="icon-button-file">
+        <span aria-label="upload picture" component="span"><i class="fa fa-plus">Kamera</i></span>
+
+        <input accept="image/*" class="dc" id="icon-button-file" type="file" capture="environment"
+            onchange="handleCapture(this)" />
+    </label>
+    <img alt=source src="" id="img" />
+</body>
+<style>
+    .dc {
+        display: none;
+    }
+</style>
+<script lang="javascript">
+    let source = ''
+    let img = document.getElementById('img')
+
+    const handleCapture = (target) => {
+        if (target.files) {
+            if (target.files.length !== 0) {
+                const file = target.files[0];
+                const newUrl = URL.createObjectURL(file);
+                source = newUrl;
+                console.log('Files', file)
+                console.log(img)
+                img.setAttribute('src', newUrl)
+            }
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Dashboard",
+        "path": "/admin/dashboard",
+        "icon": "fa fa-pie-chart",
+        "urll": "dashboard"
+    },
+    {
+        "title": "Portal News",
+        "path": "/admin/portal-news",
+        "icon": "fa fa-book",
+        "urll": "portal-news"
+    },
+    {
+        "title": "Misanthropy",
+        "path": "/admin/msntrp",
+        "icon": "fa fa-certificate",
+        "urll": "msntrp"
+    },
+    {
+        "title": "Market Place",
+        "path": "/admin/market-place",
+        "icon": "fa fa-shopping-cart",
+        "urll": "market-place"
+
+    }
+]

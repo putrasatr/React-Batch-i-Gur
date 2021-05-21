@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Router } from 'react-router-dom';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import './index.css';
@@ -12,6 +12,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './Component/Saga';
+import history from './history';
 
 const sagaMiddleware = createSagaMiddleware();
 const enhancer = compose(applyMiddleware(sagaMiddleware));
@@ -20,11 +21,13 @@ const store = createStore(rootReducer, enhancer);
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
-    <Provider store={store}>
+  <Provider store={store}>
+    <Router history={history}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider>,
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 

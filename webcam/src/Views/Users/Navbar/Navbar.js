@@ -2,13 +2,13 @@ import "../../../Assets/Css/navbar.css"
 import { secureLocalStorage } from "../../../helpers"
 import history from "../../../history"
 import Loading from "../../../Assets/Background/Loadnig"
-import chill from "../../../Assets/Image/gnu.png"
 
 import React, { useState } from 'react'
+import { Link } from "react-router-dom"
 
 function logout() {
     secureLocalStorage.clear()
-    history.push('/')
+    history.push('/welcome')
 }
 
 export default function NavBar() {
@@ -16,38 +16,36 @@ export default function NavBar() {
 
     const [isLoading, setisLoading] = useState(true)
 
-    setTimeout(()=>setisLoading(false),2000)
+    setTimeout(() => setisLoading(false), 2000)
     return (
         <div>
             {isLoading && <Loading />}
             <nav className="navbar">
                 <div className="navbar__container">
-                    <a href="#home" id="navbar__logo">{email}</a>
+                    <Link to="/" id="navbar__logo">{email}</Link>
                     <div className="navbar__toggle" id="mobile-menu">
                         <span className="bar"></span> <span className="bar"></span>
                         <span className="bar"></span>
                     </div>
                     <ul className="navbar__menu">
                         <li className="navbar__item">
-                            <a href="#home" className="navbar__links" id="home-page">Home</a>
+                            <Link to="/" className="navbar__links" id="home-page">Home</Link>
                         </li>
                         <li className="navbar__item">
-                            <a href="#about" className="navbar__links" id="about-page">About</a>
+                            <Link to="/philosophy" className="navbar__links" id="about-page">Philosophy</Link>
                         </li>
                         <li className="navbar__item">
-                            <a href="#services" className="navbar__links" id="services-page"
-                            >Services</a
-                            >
+                            <Link to="/market-place" className="navbar__links" id="about-page">Market Place</Link>
+                        </li>
+                        <li className="navbar__item">
+                            <Link to="/news" className="navbar__links" id="about-page">News</Link>
                         </li>
                         <li className="navbar__btn">
-                            <a href="/" className="button" id="signup" onClick={logout}>Log Out</a>
+                            <a href="/welcome" className="button" id="signup" onClick={logout}>Log Out</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <div>
-                <img alt="" src={chill} />
-            </div>
         </div>
     )
 }
