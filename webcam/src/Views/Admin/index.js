@@ -18,20 +18,24 @@ function Admin() {
                 <Sidebar />
                 <div className="main-content">
                     <Switch>
-                        <Route path="/admin/portal-news/add" >
+                        <Route exact path="/admin/portal-news/add" >
                             <PortalNewsForm />
                         </Route>
-                        <Route path="/admin/dashboard" >
+                        <Route exact path="/admin/dashboard" >
                             <Dashboard />
                         </Route>
-                        <Route path="/admin/portal-news" >
+                        <Route exact path="/admin/portal-news" >
                             <PortalNewsList />
                         </Route>
-                        <Route path="/admin/msntrp" >
+                        <Route exact path="/admin/msntrp" >
                             {component}
                         </Route>
-                        <Route path="/admin/market-place" >
+                        <Route exact path="/admin/market-place" >
                             {component}
+                        </Route>
+                        <Route path="*">
+                            <a href="/admin/dashboard"><span>&laquo; Back To Dashboard</span></a>
+                            <div> 404 page Not Found</div>
                         </Route>
                     </Switch>
                 </div>

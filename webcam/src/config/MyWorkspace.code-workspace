@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../Rezi/ceria-microsite-modalkerja"
+		},
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../last-hour-food-sale-apps"
+		},
+		{
+			"path": "../../../../../.."
+		},
+		{
+			"path": "../../../../../../../xcool"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Project"
+	}
+}

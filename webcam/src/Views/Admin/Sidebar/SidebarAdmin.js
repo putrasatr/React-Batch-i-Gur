@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { Link } from 'react-router-dom';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import '../../../Assets/Css/sidebar.css'
 import { isMaxWidth } from "../../../helpers";
 import route from "../admin.route.json"
+import { IconButton } from "@material-ui/core";
 
 
 export default function Sidebar() {
@@ -19,15 +21,17 @@ export default function Sidebar() {
         <div className={isSideBar ? "main-wrapper-active" : "main-wrapper"}>
             <div className="sidebar-header">
                 <span className={isMaxWidth() ? 'd-none' : "btn-sidebar-view"} onClick={handleSideBar}>
-                    <i className={!isSideBar ? 'fa fa-arrow-right icon-sv-active' : "fa fa-arrow-right icon-sidebar-view"}></i>
+                    <IconButton>
+                        <ArrowForwardIosIcon className={!isSideBar ? 'fa fa-arrow-left icon-sv-active' : "fa fa-arrow-left icon-sidebar-view"} />
+                    </IconButton>
                 </span>
             </div>
             <div className={isSideBar ? "sidebar-body-active" : "sidebar-body"}>
                 <ul className="nav">
-                    {route.map(({ title, path, icon, urll },i) => {
+                    {route.map(({ title, path, icon, urll }, i) => {
                         return (
-                            <li key={i} className={url.includes(urll) ? 'nav-item active' : 'nav-item '}>
-                                <Link to={path} className="nav-link" onClick={handleSideBar}>
+                            <li key={i} className="nav-item ">
+                                <Link to={path} className={url.includes(urll) ? "nav-link-active" : "nav-link"} onClick={handleSideBar}>
                                     <span className="link-title"><i className={icon}></i>  {title}</span>
                                 </Link>
                             </li>

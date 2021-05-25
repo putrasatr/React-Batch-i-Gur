@@ -1,7 +1,7 @@
 import "../../../Assets/Css/navbar.css"
 import { secureLocalStorage } from "../../../helpers"
 import history from "../../../history"
-import Loading from "../../../Assets/Background/Loadnig"
+import Loading from "../../../Assets/Background/Loading"
 
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"

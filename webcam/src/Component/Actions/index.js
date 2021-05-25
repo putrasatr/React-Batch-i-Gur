@@ -68,3 +68,25 @@ export const addNews = (title, content, image, category, like) => ({
     type: 'ADD_NEWS_VIEW',
     title, content, image, category, like
 })
+
+export const deleteNewsSuccess = (data) => ({
+    type: 'DELETE_NEWS_SUCCESS',
+    data
+})
+
+export const deleteNewsFailure = (message) => ({
+    type: 'DELETE_NEWS_FAILURE',
+    message
+})
+
+export const deleteNews = (id) => ({
+    type: 'DELETE_NEWS',
+    id
+})
+
+/* ------<*****  V I E W  *****>------ */
+
+export const menuView = (boolean) => ({
+    type: 'MENU_VIEW',
+    boolean
+})

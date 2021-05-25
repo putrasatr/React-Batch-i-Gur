@@ -81,3 +81,41 @@
    80%{-webkit-transform:scale(1.2)}
    to{-webkit-transform:scale(1)}
 }
+
+
+.new-notif{
+   border-radius: 50%;
+   animation-name: notif;
+   animation-duration: 900ms;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+   background-color: red;
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   top: 13px;
+   right: 13px;
+   /* padding: 5px 10px; */
+}
+.new-notif span{
+   font-size: 10px;
+   color: white;
+}
+@keyframes notif {
+   0% {
+      width: 2px;
+      height: 2px;
+      opacity: 0;
+   }
+   50%{
+      opacity: 1;
+      width: 10px;
+      height: 10px;
+   }
+   100% {
+      opacity: 0;
+      width: 15px;
+      height: 15px;
+   }
+}

@@ -1,27 +1,58 @@
 import React from 'react';
 
-// import { Link } from 'react-router-dom';
+import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+import MenuIcon from '@material-ui/icons/Menu';
 
 import '../../../Assets/Css/navbarAdmin.css'
-import { secureLocalStorage} from '../../../helpers';
-import history from '../../../history';
+import { IconButton } from '@material-ui/core';
+import { menuView } from '../../../Component/Actions';
+import { useDispatch } from 'react-redux';
 
-
-function logout() {
-    secureLocalStorage.clear()
-    history.push('/welcome')
-}
 
 
 export default function NavbarAdmin() {
+    const dispatch = useDispatch()
 
+    const [timer, setTimer] = React.useState(Date.now())
+
+    const handleMenu = () => {
+        dispatch(menuView(true))
+    }
+
+    setTimeout(() => setTimer(Date.now()), 60000)
+
+    const time = new Intl.DateTimeFormat("en-US", {
+        hour: '2-digit',
+        minute: '2-digit'
+    }).format(timer);
+    const date = new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: '2-digit'
+    }).format(timer);
     return (
         <div className="wrapper">
-            <ul className="navbar-admin-menu">
-                <li className="navbar-item">
-                    <a href="/welcome" className="navbar-link" onClick={logout}>logout</a>
+            <ul className="navbar-admin-menu flex">
+                <li className="navbar-item" onClick={handleMenu}>
+                    <IconButton>
+                        <MenuIcon />
+                    </IconButton>
+                </li>
+
+                <li className="navbar-admin">
+                    <IconButton className="inline-block">
+                        <NotificationsNoneIcon />
+                        <div className="new-notif">
+                            <span>3</span>
+                        </div>
+                    </IconButton>
+                </li>
+                <li>
+                    <span style={{ fontWeight: "bolder" }}>{date}<br />
+                        <span style={{ fontWeight: "lighter" }}>{time}</span>
+                    </span>
                 </li>
             </ul>
-        </div>
+        </div >
     )
 }

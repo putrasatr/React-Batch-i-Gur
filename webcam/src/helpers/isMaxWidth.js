@@ -10,7 +10,6 @@ const IsMaxWidth = () => {
     useEffect(() => {
         window.addEventListener("resize", handleResize);
     }, [windowWidth])
-    console.log(windowWidth)
     if (windowWidth >= 800) return true
     return false
 }

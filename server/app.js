@@ -6,6 +6,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors')
 const flash = require('connect-flash');
+const fileUpload =require('express-fileupload')
 
 mongoose.connect('mongodb://localhost/batchigur', {
   useNewUrlParser: true,
@@ -30,6 +31,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(flash());
+
+app.use(fileUpload());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

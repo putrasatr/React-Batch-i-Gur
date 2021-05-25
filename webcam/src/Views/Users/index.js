@@ -29,6 +29,7 @@ export default function Users() {
                         )
                     })}
                     <Route path="*">
+                        <a href="/"><span>Back To Home</span></a>
                         <div>Not Found</div>
                     </Route>
                 </Switch>

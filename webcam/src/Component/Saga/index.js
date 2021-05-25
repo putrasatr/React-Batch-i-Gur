@@ -20,6 +20,12 @@ const get = async (path) =>
         .catch(err => {
             throw err
         })
+const trash = async (path) =>
+    await request.delete(path)
+        .then(response => response.data)
+        .catch(err => {
+            throw err
+        })
 
 const PATH_NEWS = '/news';
 const PATH_USERS = '/users';
@@ -54,8 +60,16 @@ function* registerUser(payload) {
 /* -----< *** PORTAL NEWS *** >----- */
 function* addNews(payload) {
     const { title, image, content, category, like } = payload
+    var formData = new FormData();
+    formData.append('title', title)
+    formData.append('content', content)
+    formData.append('category', category)
+    formData.append('like', like)
+    formData.append('image', image)
     try {
-        const { data, message } = yield call(post, `${PATH_NEWS}/add`, { title, image, content, category, like })
+        const message ="Success"
+        const data = yield call(post, `${PATH_NEWS}/add`, formData)
+        console.log(data)
         if (data) return yield put(actions.addNewsSuccess(data, message))
         yield put(actions.addNewsFailure(message))
     } catch (error) {
@@ -75,6 +89,18 @@ function* loadNews() {
         yield put(actions.loadNewsFailure(errMessage));
     }
 }
+function* deleteNews(payload) {
+    try {
+        const { id } = payload
+        const { message } = yield call(trash, `${PATH_NEWS}/delete/${id}`)
+        if (id) return yield put(actions.deleteNewsSuccess(id))
+        yield put(actions.deleteNewsFailure(message))
+    } catch (error) {
+        const errMessage = "There Is Something Wrong"
+        console.log(error);
+        yield put(actions.deleteNewsFailure(errMessage));
+    }
+}
 /* -----< *** EXPORT DEFAULT *** >----- */
 export default function* rootSaga() {
     yield all([
@@ -82,5 +108,6 @@ export default function* rootSaga() {
         takeEvery('REGISTER_VIEW', registerUser),
         takeEvery('ADD_NEWS_VIEW', addNews),
         takeEvery('LOAD_NEWS_VIEW', loadNews),
+        takeEvery('DELETE_NEWS', deleteNews),
     ])
 }
