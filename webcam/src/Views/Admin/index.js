@@ -14,7 +14,7 @@ function Admin() {
     if (isAdmin) {
         return (
             <>
-                <NavbarAdmin />
+                {/* <NavbarAdmin /> */}
                 <Sidebar />
                 <div className="main-content">
                     <Switch>

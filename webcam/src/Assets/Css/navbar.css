@@ -1,8 +1,5 @@
 /* #6b9dd0, */
 .navbar {
-    background: #f7f1ff;
-    /* background: -webkit-linear-gradient(to right, #6b9dd0,#fad0ce,#ffe8e6);
-    background: linear-gradient(to right,   #6b9dd0,#fad0ce,#ffe8e6); */
     height: 80px;
     display: flex;
     justify-content: center;
@@ -135,7 +132,7 @@
       height: 3px;
       margin: 5px auto;
       transition: all 0.3s ease-in-out;
-      background: #fff;
+      /* background: #fff; */
     }
   
     .navbar__item {

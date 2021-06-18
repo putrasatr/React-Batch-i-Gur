@@ -44,8 +44,11 @@
   display: grid;
   grid-template-columns: 250px;
   grid-template-rows: 160px 100px auto auto;
-  padding: 10px auto;
+  padding: 5px ;
   margin-bottom: 10px;
+  margin: 0 10px 10px 20px;
+  background-color: var(--main-bg-color);
+  border-radius: 1pc;
 }
 
 @media screen and (max-width : 800px) {
@@ -65,10 +68,10 @@
 
 .card-img {
   overflow: hidden;
-  background-color: #000000;
+  background-color:var(--main-bg-color);
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  padding: 10px;
 }
 
 .card-body-news {
@@ -85,7 +88,7 @@
 }
 
 .card-action-news {
-  padding: 5px 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -101,7 +104,7 @@
 }
 
 .img-news {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
 }
 
@@ -119,6 +122,7 @@
   position: absolute;
   margin-left: 176px;
   /* right: 20px; */
+  color: #182867;
   border-radius: 5px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);;
 }
@@ -131,6 +135,9 @@
 } 
 .txt-toggle {
   margin-bottom: 9px;
+}
+.txt-modal {
+  color: var(--main-bg-color);
 }
 .body-title-news{
   width: 100%;

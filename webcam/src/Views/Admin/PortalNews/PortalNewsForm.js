@@ -12,7 +12,6 @@ function HeaderFormNews(props) {
 
     const [titleValue, setTitle] = useState('')
     const [categoryValue, setCategory] = useState('')
-
     const handleChangeTitle = (v) => {
         const target = v.target;
         const value = target.value;
@@ -67,6 +66,9 @@ function BodyFormNews(props) {
     const [contentValue, setContentVal] = useState('')
     const [file, setFile] = useState('')
     const [imagePreviewUrl, setImagePreviewUrl] = useState('')
+    const { element } = {
+        element: <PhotoCameraRoundedIcon />
+    }
     const photoUpload = (event) => {
         event.preventDefault();
         const reader = new FileReader();
@@ -98,15 +100,15 @@ function BodyFormNews(props) {
                             id="icon-button-file"
                             className="file-input"
                             type="file"
-                            onChange={(e) => photoUpload(e)} 
-                            accept="image/*"/>
+                            onChange={(e) => photoUpload(e)}
+                            accept="image/*" />
                         <label htmlFor="icon-button-file">
                             <IconButton
                                 color="primary"
                                 aria-label="upload picture"
                                 component="span"
                             >
-                                <PhotoCameraRoundedIcon fontSize="large" color="primary" />
+                                {element}
                             </IconButton>
                         </label>
                         {/* <input

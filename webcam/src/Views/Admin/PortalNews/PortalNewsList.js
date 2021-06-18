@@ -77,10 +77,7 @@ function PortalNewsList() {
                                     <div className="body-content-news">
                                         <span>{content}</span>
                                     </div>
-
-
                                 </div>
-
                                 <div className="card-action-news" onClick={(e) => mouseEnter(i, e)}  onMouseLeave={mouseLeave}>
                                     <span style={{ color: "gray" }} className={modalView !== i ? "toggle-action" : "d-none"}>
                                         <i className="fa fa-ellipsis-v"></i>
@@ -88,8 +85,8 @@ function PortalNewsList() {
                                 </div>
 
                                 <div className={modalView === i ? "modal-action" : "d-none"} onMouseEnter={modalView === i ? (e) => mouseEnter(i, e) : () => { }} onMouseLeave={mouseLeave}>
-                                    <Link to={path} className="txt-toggle"><span><i className="fa fa-pencil"></i> Edit</span></Link>
-                                    <span onClick={() => handleDeleteNews(_id)}><i className="fa fa-trash"></i> Delete</span>
+                                    <Link to={path} className="txt-toggle"><span className="txt-modal" ><i className="fa fa-pencil"></i> Edit</span></Link>
+                                    <span className="txt-modal" onClick={() => handleDeleteNews(_id)}><i className="fa fa-trash"></i> Delete</span>
                                 </div>
                             </div>
                         </div>)
