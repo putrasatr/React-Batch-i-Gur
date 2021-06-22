@@ -4,7 +4,7 @@ import { Link, useRouteMatch } from "react-router-dom"
 
 import { deleteNews, loadNews } from "../../../Component/Actions"
 import BASE_URL from "../../../config"
-import '../../../Assets/Css/portalNews.css'
+import './portalNews.css'
 import Loading from "../../../Assets/Background/Loading"
 
 
@@ -26,9 +26,6 @@ function PortalNewsList() {
     }
     const handleSearchMouseEnter = () => {
         isSrcBxView(true)
-    }
-    const handleSearchMouse = () => {
-        isSrcBxView(false)
     }
     const handleClickSearch = () => {
         isSrcBxView(true)
@@ -57,11 +54,12 @@ function PortalNewsList() {
                 <Link to={path + "/add"} className="add-news">
                     <div className="add-news"><span className="link-title" style={{ fontSize: '2rem' }}><i className="fa fa-plus"></i></span></div>
                 </Link>
+                <div className="search-box">
+                    <span style={{ fontSize: '20px' }} onClick={() => handleSearchMouseEnter()} className={srcBxView ? "d-none" : ""}><i className="fa fa-search"></i></span>
+                    <input type="text" value={searchVal} placeholder="Search" className={srcBxView ? "search-form" : "d-none"} onChange={e => handleSearchVal(e)} onMouseEnter={() => handleSearchMouseEnter()} onClick={handleClickSearch}></input>
+                </div>
             </div>
-            <div className="search-box">
-                <span style={{ fontSize: '20px' }} onMouseEnter={() => handleSearchMouseEnter()} onMouseLeave={handleSearchMouse} className={srcBxView ? "d-none" : ""}><i className="fa fa-search"></i></span>
-                <input type="text" value={searchVal} placeholder="Search" className={srcBxView ? "search-form" : "d-none"} onChange={e => handleSearchVal(e)} onMouseEnter={() => handleSearchMouseEnter()} onClick={handleClickSearch}></input>
-            </div>
+
             <div className={dataFiltered && dataFiltered.length > 0 ? 'row-news' : ""}>
                 {dataFiltered && dataFiltered.length > 0 ? dataFiltered.map(({ title, content, image, _id }, i) => {
                     return (
@@ -78,7 +76,7 @@ function PortalNewsList() {
                                         <span>{content}</span>
                                     </div>
                                 </div>
-                                <div className="card-action-news" onClick={(e) => mouseEnter(i, e)}  onMouseLeave={mouseLeave}>
+                                <div className="card-action-news" onClick={(e) => mouseEnter(i, e)} onMouseLeave={mouseLeave}>
                                     <span style={{ color: "gray" }} className={modalView !== i ? "toggle-action" : "d-none"}>
                                         <i className="fa fa-ellipsis-v"></i>
                                     </span>

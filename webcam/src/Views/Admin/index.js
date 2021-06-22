@@ -3,18 +3,16 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import '../../Assets/Css/mainStyle.css'
 import Sidebar from './Sidebar/SidebarAdmin';
-import NavbarAdmin from './Navbar/NavbarAdmin.js';
 import { isAdmin } from '../../helpers';
 import Dashboard from './Dashboard/Dashboard';
 import PortalNewsForm from './PortalNews/PortalNewsForm';
 import PortalNewsList from './PortalNews/PortalNewsList';
 
 function Admin() {
-    const component = "comp"
+    const component = "This page is under construction"
     if (isAdmin) {
         return (
             <>
-                {/* <NavbarAdmin /> */}
                 <Sidebar />
                 <div className="main-content">
                     <Switch>

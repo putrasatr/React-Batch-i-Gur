@@ -2,14 +2,15 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { IconButton } from '@material-ui/core';
 import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
-import "../../../Assets/Css/portalNews.css"
+import "./portalNews.css"
 import { useDispatch } from "react-redux";
 import { addNews } from "../../../Component/Actions";
 
 function HeaderFormNews(props) {
     const { handleSubmit, file, content } = props
-
     const [titleValue, setTitle] = useState('')
     const [categoryValue, setCategory] = useState('')
     const handleChangeTitle = (v) => {
@@ -50,7 +51,7 @@ function HeaderFormNews(props) {
                     <div className="row-input-pub-fn grid ">
                         <input className="form-control bg-secondary" placeholder="Category" value={categoryValue} onChange={(e) => handleChangeCategory(e)} />
                         <input className="form-control bg-secondary" />
-                        <input className="form-control bg-secondary" />
+
                     </div>
 
                 </div>
@@ -63,6 +64,10 @@ function HeaderFormNews(props) {
 }
 
 function BodyFormNews(props) {
+    const [value, setInputValue] = useState({
+        title: "",
+        body: "",
+    });
     const [contentValue, setContentVal] = useState('')
     const [file, setFile] = useState('')
     const [imagePreviewUrl, setImagePreviewUrl] = useState('')
@@ -79,10 +84,10 @@ function BodyFormNews(props) {
         }
         reader.readAsDataURL(file_res);
     }
-    const handleChangeContent = (v) => {
-        const target = v.target;
-        const value = target.value;
-        setContentVal(value)
+    const handleChangeContent = (data) => {
+        // const target = v.target;
+        // const value = target.value;
+        setInputValue((prevState) => ({ ...prevState, body: data }))
     }
     return (
         <>
@@ -91,6 +96,24 @@ function BodyFormNews(props) {
             <div className="card-fn-body">
                 <div className="card-fn-b-1">
                     <span>News Content</span>
+                    <CKEditor
+                        name="body"
+                        editor={ClassicEditor}
+                        data={value.body}
+                        onReady={(editor) => {
+                            editor.editing.view.change((writer) => {
+                                writer.setStyle(
+                                    "height",
+                                    "500px",
+                                    editor.editing.view.document.getRoot()
+                                );
+                            });
+                        }}
+                        onChange={(_, editor) => {
+                            const data = editor.getData();
+                            handleChangeContent(data);
+                        }}
+                    />
                     <textarea className="content-fn" value={contentValue} onChange={(e) => handleChangeContent(e)}></textarea>
                 </div>
                 <div className="card-fn-b-2">
@@ -139,11 +162,8 @@ function FooterFormNews(props) {
 function PortalNewsForm() {
     const dispatch = useDispatch()
     const handleSubmit = (title, category, content, image) => {
-        // console.log('okay')
-
         if (title && category && content && image)
-            console.log('okay')
-        dispatch(addNews(title, content, image, category, 0))
+            dispatch(addNews(title, content, image, category, 0))
     }
 
     return (

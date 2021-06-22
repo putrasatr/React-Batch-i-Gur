@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import { Link } from 'react-router-dom';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
-import '../../../Assets/Css/sidebar.css'
+import './sidebar.css'
 import { isMaxWidth } from "../../../helpers";
-import route from "../admin.route.json"
+import route from "../admin.route"
 import { IconButton } from "@material-ui/core";
 
 
