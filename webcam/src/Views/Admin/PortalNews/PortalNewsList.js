@@ -52,7 +52,7 @@ function PortalNewsList() {
         <>
             <div className="header-news">
                 <Link to={path + "/add"} className="add-news">
-                    <div className="add-news"><span className="link-title" style={{ fontSize: '2rem' }}><i className="fa fa-plus"></i></span></div>
+                    <div className="add-news"><span className="link-title" style={{ fontSize: '40px' }}><i className="fa fa-plus"></i></span></div>
                 </Link>
                 <div className="search-box">
                     <span style={{ fontSize: '20px' }} onClick={() => handleSearchMouseEnter()} className={srcBxView ? "d-none" : ""}><i className="fa fa-search"></i></span>

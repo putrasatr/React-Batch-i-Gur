@@ -237,8 +237,8 @@ overflow: hidden;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* width: 80px; */
-  height: 100%;
+  width: 50px;
+  height: 50px;
   background-color: var(--main-bg-color);
   border-radius: 10px;
   z-index: 998;
@@ -258,16 +258,19 @@ overflow: hidden;
 
 /* -------START ADD NEWS------- */
 .card-form-news {
-  width: 70%;
+  width: 80%;
   flex-direction: column;
-  height: 800px;
-  border-radius: 3px;
+  height: auto;
+  padding: 40px 70px;
+  border-radius: 1pc;
   transition: 0.5s all ease;
+  background-color: var(--main-bg-color);
+  margin-left: 20px;
 }
 
 @media screen and (max-width : 800px) {
   .card-form-news {
-    width: 100%;
+    width: 80%;
     height: 1100px;
     transition: 0.5s all ease;
     margin-left: 20px;

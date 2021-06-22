@@ -19,11 +19,12 @@ export default function NavbarAdmin() {
         dispatch(menuView(true))
     }
 
-    setTimeout(() => setTimer(Date.now()), 60000)
+    setInterval(() => setTimer(Date.now()), 1000)
 
     const time = new Intl.DateTimeFormat("en-US", {
         hour: '2-digit',
-        minute: '2-digit'
+        minute: '2-digit',
+        second:'2-digit'
     }).format(timer);
     const date = new Intl.DateTimeFormat('en-US', {
         year: 'numeric',
@@ -48,8 +49,8 @@ export default function NavbarAdmin() {
                     </IconButton>
                 </li>
                 <li>
-                    <span style={{ fontWeight: "bolder" }}>{date}<br />
-                        <span style={{ fontWeight: "lighter" }}>{time}</span>
+                    <span style={{ fontWeight: "bolder", color: 'white' }}>{date}<br />
+                        <span style={{ fontWeight: "lighter", color: 'white' }}>{time}</span>
                     </span>
                 </li>
             </ul>
