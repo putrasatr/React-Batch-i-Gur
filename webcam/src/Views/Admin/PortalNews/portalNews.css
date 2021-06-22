@@ -274,6 +274,7 @@ overflow: hidden;
     height: 1100px;
     transition: 0.5s all ease;
     margin-left: 20px;
+    padding: 40px 20px;
   }
 }
 

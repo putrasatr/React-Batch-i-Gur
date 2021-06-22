@@ -84,10 +84,11 @@ function BodyFormNews(props) {
         }
         reader.readAsDataURL(file_res);
     }
-    const handleChangeContent = (data) => {
-        // const target = v.target;
-        // const value = target.value;
-        setInputValue((prevState) => ({ ...prevState, body: data }))
+    const handleChangeContent = (v) => {
+        const target = v.target;
+        const value = target.value;
+        setContentVal(value)
+        // setInputValue((prevState) => ({ ...prevState, body: data }))
     }
     return (
         <>
@@ -96,7 +97,7 @@ function BodyFormNews(props) {
             <div className="card-fn-body">
                 <div className="card-fn-b-1">
                     <span>News Content</span>
-                    <CKEditor
+                    {/* <CKEditor
                         name="body"
                         editor={ClassicEditor}
                         data={value.body}
@@ -113,7 +114,7 @@ function BodyFormNews(props) {
                             const data = editor.getData();
                             handleChangeContent(data);
                         }}
-                    />
+                    /> */}
                     <textarea className="content-fn" value={contentValue} onChange={(e) => handleChangeContent(e)}></textarea>
                 </div>
                 <div className="card-fn-b-2">
