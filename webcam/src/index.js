@@ -7,11 +7,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import rootReducer from './Component/Reducer';
+import rootReducer from './Services/Reducer';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import rootSaga from './Component/Saga';
+import rootSaga from './Services/Saga';
 import history from './history';
 
 const sagaMiddleware = createSagaMiddleware();

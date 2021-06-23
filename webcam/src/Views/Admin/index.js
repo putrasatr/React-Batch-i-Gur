@@ -5,8 +5,7 @@ import '../../Assets/Css/mainStyle.css'
 import Sidebar from './Sidebar/SidebarAdmin';
 import { isAdmin } from '../../helpers';
 import Dashboard from './Dashboard/Dashboard';
-import PortalNewsForm from './PortalNews/PortalNewsForm';
-import PortalNewsList from './PortalNews/PortalNewsList';
+import { PortalNewsForm, PortalNewsList } from './PortalNews'
 
 function Admin() {
     const component = "This page is under construction"

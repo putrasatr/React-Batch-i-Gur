@@ -7,7 +7,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import "./portalNews.css"
 import { useDispatch } from "react-redux";
-import { addNews } from "../../../Component/Actions";
+import { addNews } from "../../../../Services/Actions";
 
 function HeaderFormNews(props) {
     const { handleSubmit, file, content } = props

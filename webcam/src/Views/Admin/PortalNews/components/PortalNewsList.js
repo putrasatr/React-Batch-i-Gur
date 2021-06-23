@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useRouteMatch } from "react-router-dom"
 
-import { deleteNews, loadNews } from "../../../Component/Actions"
-import BASE_URL from "../../../config"
+import { deleteNews, loadNews } from "../../../../Services/Actions"
+import BASE_URL from "../../../../config"
 import './portalNews.css'
-import Loading from "../../../Assets/Background/Loading"
+import Loading from "../../../../Assets/Background/Loading"
 
 
 function PortalNewsList() {

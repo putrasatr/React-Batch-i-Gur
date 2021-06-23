@@ -5,7 +5,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 import '../../../Assets/Css/navbarAdmin.css'
 import { IconButton } from '@material-ui/core';
-import { menuView } from '../../../Component/Actions';
+import { menuView } from '../../../Services/Actions';
 import { useDispatch } from 'react-redux';
 
 

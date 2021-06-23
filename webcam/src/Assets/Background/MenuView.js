@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-import { menuView } from '../../Component/Actions';
+import { menuView } from '../../Services/Actions';
 import { secureLocalStorage } from '../../helpers';
 import history from '../../history';
 import "../Css/style.css"

@@ -4,7 +4,7 @@ import EyeSlash from '../../Assets/Icons/eyeslash.png'
 import Eye from '../../Assets/Icons/eye.png'
 import Limg from '../../Assets/Icons/loadingnu.png'
 import { passValidate, ValidateEmail } from '../../Assets/Javascript/EmailValidator'
-import { registerUser } from '../../Component/Actions'
+import { registerUser } from '../../Services/Actions'
 
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
