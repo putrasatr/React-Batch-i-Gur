@@ -7,6 +7,7 @@ const delFile = require('../helpers/deleteFile')
 
 router.get('/list', async function (req, res, next) {
     try {
+        console.log(req.query)
         const data = await News.find({})
 
         return res.status(201).json({
