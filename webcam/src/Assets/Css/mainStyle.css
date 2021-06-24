@@ -17,6 +17,7 @@
     max-width: 100%;
     transition: 0.5s all ease;
     background-color: var(--bg-body);
+    
 
 }
 @media screen and (max-width : 800px){

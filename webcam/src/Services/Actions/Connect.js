@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { default as baseURL  } from '../../config'
+import { default as baseURL } from '../../config'
 import { secureLocalStorage } from '../../helpers'
 
 // const token = localStorage.getItem('token')

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
-import ReactPlayer from 'react-player/youtube'
+// import ReactPlayer from 'react-player/youtube'
 import Box from '@material-ui/core/Box';
 import { IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
 function App() {
   const classes = useStyles();
   const [source, setSource] = useState("");
-  const urlYt = 'https://www.youtube.com/watch?v=qN4ooNx77u0';
+  // const urlYt = 'https://www.youtube.com/watch?v=qN4ooNx77u0';
   const handleCapture = (target) => {
     if (target.files) {
       console.log('Files', target.files)
@@ -42,7 +42,7 @@ function App() {
     }
   }; return (
     <div className={classes.root}>
-      <ReactPlayer url={urlYt} controls={true}/>
+      {/* <ReactPlayer url={urlYt} controls={true} /> */}
       <Grid container>
         <Grid item xs={12}>
           <h5>Capture your image</h5>
@@ -69,6 +69,16 @@ function App() {
           </label>
         </Grid>
       </Grid>
+      {/* <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/5_n2Hp2hRVw"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+
+      </iframe> */}
     </div>
   );
 }

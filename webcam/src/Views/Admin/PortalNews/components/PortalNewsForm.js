@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { IconButton } from '@material-ui/core';
 import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+// import { CKEditor } from "@ckeditor/ckeditor5-react";
+// import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import "./portalNews.css"
 import { useDispatch } from "react-redux";
@@ -64,10 +64,10 @@ function HeaderFormNews(props) {
 }
 
 function BodyFormNews(props) {
-    const [value, setInputValue] = useState({
-        title: "",
-        body: "",
-    });
+    // const [value, setInputValue] = useState({
+    //     title: "",
+    //     body: "",
+    // });
     const [contentValue, setContentVal] = useState('')
     const [file, setFile] = useState('')
     const [imagePreviewUrl, setImagePreviewUrl] = useState('')

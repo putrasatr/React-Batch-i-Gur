@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 /* ------<*****  L O G I N   *****>------ */
 export const loginSuccess = (data, token, message) => ({
     type: 'LOGIN_SUCCESS',
@@ -90,3 +92,22 @@ export const menuView = (boolean) => ({
     type: 'MENU_VIEW',
     boolean
 })
+
+
+export const getDataBooks = async (query) => {
+    let pageNumber = 1;
+    let cancel;
+    const res = await axios({
+        method: 'GET',
+        url: 'http://openlibrary.org/search.json',
+        params: {
+            q: query,
+            page: pageNumber,
+            limit: 10
+        },
+        cancelToken: new axios.CancelToken(c => cancel = c)
+    })
+    return new Promise(resolve => {
+        resolve(res)
+    })
+}

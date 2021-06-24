@@ -1,0 +1,1 @@
+export { default as PhilosophyList } from './components/PhilosophyList'

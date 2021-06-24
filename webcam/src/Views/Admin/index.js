@@ -4,11 +4,12 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import '../../Assets/Css/mainStyle.css'
 import Sidebar from './Sidebar/SidebarAdmin';
 import { isAdmin } from '../../helpers';
-import Dashboard from './Dashboard/Dashboard';
+import { Dashboard } from './Dashboard';
 import { PortalNewsForm, PortalNewsList } from './PortalNews'
+import { PhilosophyList } from "./Philosophy"
+import { MarketPlaceList } from "./MarketPlace"
 
 function Admin() {
-    const component = "This page is under construction"
     if (isAdmin) {
         return (
             <>
@@ -18,6 +19,9 @@ function Admin() {
                         <Route exact path="/admin/portal-news/add" >
                             <PortalNewsForm />
                         </Route>
+                        <Route exact path="/admin/market-place/:title" >
+                            <div>DETAil</div>
+                        </Route>
                         <Route exact path="/admin/dashboard" >
                             <Dashboard />
                         </Route>
@@ -25,10 +29,10 @@ function Admin() {
                             <PortalNewsList />
                         </Route>
                         <Route exact path="/admin/msntrp" >
-                            {component}
+                            <PhilosophyList />
                         </Route>
                         <Route exact path="/admin/market-place" >
-                            {component}
+                            <MarketPlaceList />
                         </Route>
                         <Route path="*">
                             <a href="/admin/dashboard"><span>&laquo; Back To Dashboard</span></a>
