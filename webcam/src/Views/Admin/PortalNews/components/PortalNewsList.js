@@ -65,7 +65,7 @@ function PortalNewsList() {
                     return (
                         <div key={i} className="card-news">
                             <div className="card-img">
-                                <img alt="tidak ada foto" src={BASE_URL + `images/news/${image}`} className="img-news " style={{ borderRadius: '5px' }} />
+                                <img alt="tidak ada foto" src={BASE_URL + `images/news/${image}`} className="img-news" style={{ borderRadius: '5px' }} />
                             </div>
                             <div className="box-body-news">
                                 <div className="card-body-news">
