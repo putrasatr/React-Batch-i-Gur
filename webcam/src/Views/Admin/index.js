@@ -8,6 +8,7 @@ import { Dashboard } from './Dashboard';
 import { PortalNewsForm, PortalNewsList } from './PortalNews'
 import { PhilosophyList } from "./Philosophy"
 import { MarketPlaceList } from "./MarketPlace"
+import { Chat } from "./Chat"
 
 function Admin() {
     if (isAdmin) {
