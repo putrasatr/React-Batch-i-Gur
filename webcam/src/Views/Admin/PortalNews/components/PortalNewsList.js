@@ -45,7 +45,9 @@ function PortalNewsList() {
     let dataFiltered = data;
     if (searchVal !== 'undefined' && data) {
         dataFiltered = data.filter(({ content, title, category }) =>
-            content.toLowerCase().includes(searchVal.toLowerCase()) || title.toLowerCase().includes(searchVal.toLowerCase()) || category.toLowerCase().includes(searchVal.toLowerCase())
+            content.toLowerCase().includes(searchVal.toLowerCase())
+            || title.toLowerCase().includes(searchVal.toLowerCase())
+            || category.toLowerCase().includes(searchVal.toLowerCase())
         )
     }
     return (
