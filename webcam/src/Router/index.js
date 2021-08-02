@@ -8,18 +8,20 @@ import Admin from "../Views/Admin";
 import Loading from "../Assets/Background/Loading";
 import MenuView from "../Assets/Background/MenuView";
 import { ProtectedRoute } from "../protected.route";
-
+import routers from "./router"
 function Routes() {
-  const [isLoading,setLoading] = React.useState(true)
+  const [isLoading, setLoading] = React.useState(true)
   setTimeout(() => setLoading(false), 2000)
   return (
     <>
       {isLoading && <Loading />}
-      <MenuView/>
+      <MenuView />
       <Switch>
-        <Route path="/welcome" exact component={Login} />
-        <ProtectedRoute path="/admin" component={Admin} />
-        <ProtectedRoute path="/" component={Users} />
+        {routers.map(({ path, Component, protected }, i) => {
+          protected
+            ? <ProtectedRoute key={i} path={path} component={Component} />
+            : <Route key={i} path="/welcome" exact component={Component} />
+        })}
       </Switch>
     </>
   )
