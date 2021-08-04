@@ -35,6 +35,9 @@ function Admin() {
                         <Route exact path="/admin/market-place" >
                             <MarketPlaceList />
                         </Route>
+                        <Route exact path="/admin/chat" >
+                            <Chat />
+                        </Route>
                         <Route path="*">
                             <a href="/admin/dashboard"><span>&laquo; Back To Dashboard</span></a>
                             <div> 404 page Not Found</div>

@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { Link } from 'react-router-dom';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import { IconButton } from "@material-ui/core";
 
 import './sidebar.css'
 import { isMaxWidth } from "../../../helpers";
 import route from "../admin.route"
-import { IconButton } from "@material-ui/core";
 
 
 export default function Sidebar() {
@@ -38,6 +38,9 @@ export default function Sidebar() {
                         )
                     })}
                 </ul>
+                <button onClick={() => { }}>
+                    <span>logout</span>
+                </button>
             </div>
         </div>
     )

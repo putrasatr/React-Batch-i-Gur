@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { TextField, withStyles } from "@material-ui/core"
+import { withStyles } from "@material-ui/core"
 
 import { styles } from "./styles"
 import { getDataBooks } from "../../../../Services/Actions"
@@ -26,7 +26,7 @@ function ListItem({ data, loading, classes }) {
                 </div>
             </div>
         )
-    }):<span className={item}>Tidak Ada Data</span>
+    }) : <span className={item}>Tidak Ada Data</span>
     return loading ? <SkeletonMUI classes={classes} count={3} /> : datanode
 }
 
