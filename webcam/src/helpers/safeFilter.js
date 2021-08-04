@@ -1,6 +1,6 @@
 import filter from "lodash.filter"
 
-export const handleSearch = text => {
+export const handleSearch = (text, detail, setData, setQuery) => {
     const formattedQuery = text.toLowerCase();
     let filteredData = false;
     if (detail) {
