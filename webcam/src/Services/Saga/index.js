@@ -67,7 +67,7 @@ function* addNews(payload) {
     formData.append('like', like)
     formData.append('image', image)
     try {
-        const message ="Success"
+        const message = "Success"
         const data = yield call(post, `${PATH_NEWS}/add`, formData)
         console.log(data)
         if (data) return yield put(actions.addNewsSuccess(data, message))

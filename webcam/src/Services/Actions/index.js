@@ -30,6 +30,11 @@ export const registerSuccess = (data, token, message) => ({
         message
     }
 })
+/* ------<*****  L O G O U T   *****>------ */
+export const logout = (token) => ({
+    type: 'LOGOUT',
+    token
+})
 
 export const registerFailure = (message) => ({
     type: 'REGISTER_FAILURE',
@@ -96,7 +101,10 @@ export const menuView = (boolean) => ({
 
 export const getDataBooks = async (query) => {
     let pageNumber = 1;
-    let cancel;
+    const cancelToken = c => {
+        let cancel = c
+        return cancel
+    }
     const res = await axios({
         method: 'GET',
         url: 'http://openlibrary.org/search.json',
@@ -105,7 +113,7 @@ export const getDataBooks = async (query) => {
             page: pageNumber,
             limit: 10
         },
-        cancelToken: new axios.CancelToken(c => cancel = c)
+        cancelToken: new axios.CancelToken(cancelToken)
     })
     return new Promise(resolve => {
         resolve(res)
