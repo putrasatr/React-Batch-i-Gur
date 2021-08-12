@@ -7,16 +7,19 @@ function Chat() {
     const dispatch = useDispatch()
     const [value, setValue] = useState("")
     const sender = useSelector(state => state.chat)
+    const chat = () => {
+
+    }
     const handleChangeContent = v => {
         setValue(v)
     }
-    useEffect(() => {
-        dispatch(chat(value, sender))
-        return () => {
-            clearTimeout()
-            dispatch(Chat())
-        }
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(chat(value, sender))
+    //     return () => {
+    //         clearTimeout()
+    //         dispatch(Chat())
+    //     }
+    // }, [dispatch])
     return (
         <div>
             <input name="sender" />
